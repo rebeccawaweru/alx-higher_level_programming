@@ -1,1 +1,1 @@
-my journey learning python 3
+My journey with Python 3
