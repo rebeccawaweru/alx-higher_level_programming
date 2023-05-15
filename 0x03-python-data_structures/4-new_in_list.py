@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    if idx < 0 or idx not in range(len(my_list)):
-        return mylist[:]
+    y = len(my_list)
     lst = my_list[:]
-    lst[idx] = element
-    return lst
+
+    if 0 <= idx < y:
+        lst[idx] = element
+
+    return(lst)
