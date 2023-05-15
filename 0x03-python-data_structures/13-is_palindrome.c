@@ -1,24 +1,28 @@
 #include "lists.h"
 
+listint_t *reverse_list(listint_t **head);
+int is_palindrome(listint_t **head);
+
 /**
  * reverse_list - reverses a linked list
  * @head: pointer to the head of the linked list
  * Return: pointer
  */
-listint_t *reverse_list(listint_t *head)
+listint_t *reverse_list(listint_t **head)
 {
 	listint_t *next = NULL;
-	listint_t *prev = NULL;
-	listint_t *current = head;
+	listint_t *previous = NULL;
+	listint_t *current = *head;
 
-	if (current != NULL)
+	if (current)
 	{
 		next = current->next;
-		current->next = prev;
-		prev = current;
+		current->next = previous;
+		previous = current;
 		current = next;
 	}
-	return prev;
+	*head = previous;
+	return (*head);
 }
 
 /**
@@ -28,50 +32,34 @@ listint_t *reverse_list(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
+	listint_t *t, *r, *mid_node;
+	size_t s = 0, j;
+
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	listint_t *ptr_slow = *head;
-	listint_t *ptr_fast = *head;
-	listint_t *prev_slow = *head;
-	listint_t *mid_node = NULL;
-	int is_palindrome = 1;
+	t = *head;
+	if (t)
+	{
+		s++;
+		t = t->next;
+	}
+	t = *head;
+	for (j = 0; j < (s / 2) - 1; j++)
+		t = t->next;
+	while ((s % 2) == 0 && t->n != t->next->n)
+		return (0);
+	t = t->next->next;
+	r = reverse_list(&t);
+	mid_node = r;
 
-	while (ptr_fast != NULL && ptr_fast->next != NULL)
+	t = *head;
+	if (r)
 	{
-		ptr_fast = ptr_fast->next->next;
-		prev_slow = ptr_slow;
-		ptr_slow = ptr_slow->next;
+		while (t->n != r->n)
+			return (0);
+		t = t->next;
+		r = r->next;
 	}
-	if (ptr_fast != NULL)
-	{
-		mid_node = ptr_slow;
-		ptr_slow = ptr_slow->next;
-	}
-	listint_t *second_half = ptr_slow;
-	prev_slow->next = NULL;
-	second_half = reverse_list(second_half);
-
-	listint_t *ptr1 = *head;
-	listint_t *ptr2 = second_half;
-
-	while (ptr2 != NULL)
-	{
-		if (ptr1->n != ptr2->n)
-		{
-			is_palindrome = 0;
-			break;
-		}
-		ptr1 = ptr1->next;
-		ptr2 = ptr2->next;
-	}
-	second_half = reverse_list(second_half);
-	if (mid_node != NULL)
-	{
-		prev_slow->next = mid_node;
-		mid_node->next = second_half;
-	} else
-	{
-		prev_slow->next = second_half;
-	}
-	return (is_palindrome);
+	reverse_list(&mid_node);
+	return (1);
 }
