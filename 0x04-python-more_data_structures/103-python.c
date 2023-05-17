@@ -1,5 +1,8 @@
 #include <Python.h>
 
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+
 /**
  * print_python_list - acquire information about Python lists
  * @p: PyObject
@@ -49,7 +52,7 @@ void print_python_bytes(PyObject *p)
 	else
 		s = ((PyVarObject *)p)->ob_size + 1;
 	printf(" first %d bytes: ", s);
-	for (j = 0, j < s; j++)
+	for (j = 0; j < s; j++)
 	{
 		printf("%02hhx", y->ob_sval[j]);
 		if (j == (s - 1))
