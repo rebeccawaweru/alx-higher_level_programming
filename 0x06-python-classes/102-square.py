@@ -2,6 +2,7 @@
 
 """Defining the square"""
 
+
 class Square:
     """Representation of a square"""
 
