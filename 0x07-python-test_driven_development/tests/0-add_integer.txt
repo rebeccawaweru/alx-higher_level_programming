@@ -1,0 +1,44 @@
+#0-add_integer.txt
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Test case 1
+>>> add_integer(1, 2)
+3
+
+# Test case 2
+>>> add_integer(100, -2)
+98
+
+# Test case 3
+>>> add_integer(2)
+100
+
+# Test case 4
+>>> add_integer(100.3, -2)
+98
+
+# Test case 5
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# Test case 6
+>>> add_integer(None, 89)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# Test case 7
+>>> add_integer(89, None)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+#Test case 7
+>>> add_integer("School")
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
