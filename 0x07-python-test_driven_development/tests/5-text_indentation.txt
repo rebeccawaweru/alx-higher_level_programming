@@ -1,0 +1,35 @@
+#text_indentation
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test Case 1
+>>> text = "hey. new: user? today"
+>>> text_indentation(text)
+hey.
+<BLANKLINE>
+new:
+<BLANKLINE>
+user?
+<BLANKLINE>
+today
+
+# Test Case 2
+>>> text_indentation("hey welcome new user")
+hey welcome new user
+
+# Test Case 3
+>>> text_indentation(2)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# Test Case 4
+>>> text_indentation("hey.")
+hey.
+<BLANKLINE>
+
+#Test Case 5
+>>> text_indentation("hello.becca")
+hello.
+<BLANKLINE>
+becca
