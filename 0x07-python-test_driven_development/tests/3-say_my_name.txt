@@ -1,0 +1,37 @@
+#3-say_my_name.txt
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+#Test Case 1
+>>> say_my_name("Rebecca", "Waweru")
+My name is Rebecca Waweru
+
+#Test Case 3
+>>> say_my_name(None)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+#Test Case 4
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+#Test Case 5
+>>> say_my_name("Rebecca", None)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+Test Case 6
+>>> say_my_name("Rebecca", 2)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+Test Case 7
+>>> say_my_name(2, "Rebecca")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
