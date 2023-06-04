@@ -6,31 +6,31 @@
 >>> say_my_name("Rebecca", "Waweru")
 My name is Rebecca Waweru
 
-#Test Case 3
+# Test Case 2
+>>> say_my_name("Bob")
+My name is Bob 
+
+# Test Case 3
+>>> say_my_name("", "Waweru")
+My name is  Waweru
+
+#Test Case 4
+>>> say_my_name("", "")
+My name is  
+
+#Test Case 5
 >>> say_my_name(None)
 Traceback (most recent call last):
 	...
 TypeError: first_name must be a string
 
-#Test Case 4
->>> say_my_name(None, None)
-Traceback (most recent call last):
-	...
-TypeError: first_name must be a string
-
-#Test Case 5
->>> say_my_name("Rebecca", None)
-Traceback (most recent call last):
-	...
-TypeError: last_name must be a string
-
-Test Case 6
+#Test Case 6
 >>> say_my_name("Rebecca", 2)
 Traceback (most recent call last):
 	...
 TypeError: last_name must be a string
 
-Test Case 7
+#Test Case 7
 >>> say_my_name(2, "Rebecca")
 Traceback (most recent call last):
 	...
