@@ -4,12 +4,14 @@
 
 
 class Rectangle:
-    """ Initalizing new rectangle
-    Arguments:
-    width - integer
-    height - integer
-    """
+    """Representing a rectangle"""
+
     def __init__(self, width=0, height=0):
+        """ Initalizing new rectangle
+        Arguments:
+        width - integer
+        height - integer
+        """
         self.width = width
         self.height = height
 
