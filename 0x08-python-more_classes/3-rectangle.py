@@ -54,7 +54,6 @@ class Rectangle:
         """Return rectangle string object"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
         ob_rectangle = []
         for j in range(self.__height):
             [ob_rectangle.append('#') for a in range(self.__width)]
