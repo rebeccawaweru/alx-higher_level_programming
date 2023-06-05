@@ -49,7 +49,7 @@ class Rectangle:
 
     def area(self):
         """Return the area of the rectangle"""
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Return the perimeter of the rectangle"""
@@ -60,7 +60,7 @@ class Rectangle:
     def __str__(self):
         """Return rectangle string object"""
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return ("")
         ob_rectangle = []
         for j in range(self.__height):
             [ob_rectangle.append('#') for a in range(self.__width)]
@@ -77,4 +77,4 @@ class Rectangle:
     def __del__(self):
         """Print string at every delete action"""
         type(self).number_of_instances -= 1
-        print("By rectangle...")
+        print("Bye rectangle...")
