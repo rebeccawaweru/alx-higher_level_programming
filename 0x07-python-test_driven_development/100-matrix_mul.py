@@ -22,6 +22,8 @@ def matrix_mul(m_a, m_b):
     if m_a or m_b is not a rectangle,
     ValueError: if matrices are empty or cannot be multiplied
     """
+    if m_a is None or m_b is None:
+        raise TypeError("missing argument")
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):

@@ -70,3 +70,22 @@ Traceback (most recent call last):
 	...
 TypeError: each row of m_b must be of the same size
 
+#Test Case 13
+>>> matrix_mul([[1, 2], [3, 4]], None)
+Traceback (most recent call last):
+	...
+TypeError: missing argument
+
+#Test Case 14
+>>> matrix_mul(None, None)
+Traceback (most recent call last):
+	...
+TypeError: missing argument
+
+#Test Case 15
+>>> m_a = [[1, 2], [4, 5]]
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+	...
+ValueError: m_a and m_b can't be multiplied
