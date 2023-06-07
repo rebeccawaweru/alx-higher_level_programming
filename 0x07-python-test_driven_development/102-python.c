@@ -1,5 +1,4 @@
-#include <Python.h>
-#include <stdlib.h>
+#include "Python.h"
 
 /**
  * print_python_string - function that prints Python strings
@@ -7,21 +6,24 @@
  */
 void print_python_string(PyObject *p)
 {
-	Py_ssize_t length;
+	long int ln;
+
+	fflush(stdout);
+	printf("[.] string object info\n");
+
 	/* Check if p is a valid object */
-	if (!PyUnicode_Check(p))
+	if (strcmp(p->ob_type->tp_name, "str") != 0)
 	{
-		printf("[ERROR] Invalid String Object\n");
+		printf("  [ERROR] Invalid String Object\n");
 		return;
 	}
 	/*get string information*/
-	const char *val = PyUnicode_AsUTF8AndSize(p, &length);
-	int type = PyUnicode_KIND(p);
+	ln = ((PyASCIIObject *)(p))->length;
 
-	/*print*/
-	printf("[.] string object info\n");
-	printf(" type: %s\n", type == PyUnicode_1BYTE_KIND
-			? "compact ascii" : "compact unicode object");
-	printf(" length: %zd\n", length);
-	printf(" value: %s\n", val);
+	if (PyUnicode_IS_COMPACT_ASCII(p))
+		printf("  type: compact ascii\n");
+	else
+		printf("  type: compact unicode object\n");
+	printf("  length: %ld\n", ln);
+	printf("  value: %ls\n", PyUnicode_AsWideCharString(p, &ln));
 }
