@@ -24,6 +24,8 @@ def matrix_divided(matrix, div):
     or floats, div is not a number or each row is not the same size
     ZeroDivisionError: when div is 0
     """
+    if matrix is None or div is None:
+        raise TypeError("missing arguments")
     if not isinstance(matrix, list) or any(not
        isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) " +
