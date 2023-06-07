@@ -42,3 +42,16 @@ Traceback (most recent call last):
 	...
 TypeError: a must be an integer
 
+#Test Case 8
+>>> a = float(1.797693234486231157e+308)
+>>> b =  2
+>>> add_integer(a, b)
+Traceback (most recent call last):
+	...
+OverflowError: Float overflow
+
+#Test Case 9
+>>> add_integer(5, float('nan'))
+Traceback (most recent call last):
+	...
+ValueError: cannot convert float NaN to integer

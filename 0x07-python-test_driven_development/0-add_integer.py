@@ -14,6 +14,18 @@ def add_integer(a, b=98):
 
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    elif not isinstance(b, (int, float)):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    if isinstance(a, float) and (a == float('inf') or a == float('-inf')):
+        raise OverflowError("Float overflow")
+    if isinstance(b, float) and (b == float('inf') or b == float('-inf')):
+        raise OverflowError("Float overflow")
+
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
+    if a != int(a) or b != int(b):
+        raise ValueError("cannot convert float NaN to integer")
+
+    return a + b
