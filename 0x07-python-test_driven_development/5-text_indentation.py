@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 
+""" text_indentation
+Print text with two lines after punctuations
+"""
+
+
 def text_indentation(text):
     """ print text with 2 new lines after : . ,? :
     Args:
     text - must be a string
     """
+    if text is None:
+        raise TypeError("missing argument")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     punctuation_marks = [".", "?", ":"]
@@ -15,7 +22,7 @@ def text_indentation(text):
         line += text[j]
         if text[j] in punctuation_marks:
             line = line.strip()
-            print(line + '\n')
+            print(line)
             try:
                 if text[j + 1] == ' ':
                     j += 1

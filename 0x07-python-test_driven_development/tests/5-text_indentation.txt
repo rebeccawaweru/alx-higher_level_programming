@@ -6,11 +6,8 @@
 >>> text = "hey. new: user? today"
 >>> text_indentation(text)
 hey.
-<BLANKLINE>
 new:
-<BLANKLINE>
 user?
-<BLANKLINE>
 today
 
 # Test Case 2
@@ -26,10 +23,14 @@ TypeError: text must be a string
 # Test Case 4
 >>> text_indentation("hey.")
 hey.
-<BLANKLINE>
 
 #Test Case 5
 >>> text_indentation("hello.becca")
 hello.
-<BLANKLINE>
 becca
+
+# Test Case 6
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: missing argument
