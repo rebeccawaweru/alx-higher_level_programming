@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
+"""matrix_mul
+Multiples two matrices
+"""
+
+
 def matrix_mul(m_a, m_b):
-    """
+    """ matrix_mul
     Multiplies two matrices.
 
     Arguments:

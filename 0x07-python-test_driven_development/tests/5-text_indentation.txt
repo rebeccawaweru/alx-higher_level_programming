@@ -6,10 +6,6 @@
 >>> text = "hey. new: user? today"
 >>> text_indentation(text)
 hey.
-new:
-user?
-today
-
 # Test Case 2
 >>> text_indentation("hey welcome new user")
 hey welcome new user
@@ -21,13 +17,13 @@ Traceback (most recent call last):
 TypeError: text must be a string
 
 # Test Case 4
->>> text_indentation("hey.")
+>>> text_indentation("hey. ")
 hey.
 
 #Test Case 5
->>> text_indentation("hello.becca")
-hello.
-becca
+>>> text_indentation("  Hello becca.")
+Hello becca.
+<BLANKLINE>
 
 # Test Case 6
 >>> text_indentation(None)

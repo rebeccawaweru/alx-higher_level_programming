@@ -14,21 +14,16 @@ def text_indentation(text):
         raise TypeError("missing argument")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    punctuation_marks = [".", "?", ":"]
-    line = ""
     j = 0
-    length = len(text)
-    while j < length:
-        line += text[j]
-        if text[j] in punctuation_marks:
-            line = line.strip()
-            print(line)
-            try:
-                if text[j + 1] == ' ':
-                    j += 1
-            except IndexError:
-                pass
-            line = ''
+    while j < len(text) and text[j] == ' ':
         j += 1
-    if length > 0:
-        print(line, end="")
+    while j < len(text):
+        print(text[j], end="")
+        if text[j] == "\n" or text[j] in ".?:":
+            if text[j] in ".?:":
+                print("\n")
+            j += 1
+            while j < len(text) and text[j] == ' ':
+                j += 1
+            continue
+        j += 1
