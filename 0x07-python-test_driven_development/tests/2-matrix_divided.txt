@@ -62,6 +62,12 @@ Traceback (most recent call last):
 TypeError: missing arguments
 
 #Test Case 13
+>>> matrix_divided(None, 3)
+Traceback (most recent call last):
+	...
+TypeError: missing arguments
+
+#Test Case 14
 >>> matrix_divided(None, None)
 Traceback (most recent call last):
 	...
