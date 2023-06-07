@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-"""Multiplication of two matrices using Numpy"""
+"""Defines multiplication function of a matrix using Numpy"""
 import numpy as np
+
+""" lazy_matrix_mul
+Multiplies two matrices using Numpy
+Takes two matrices
+"""
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """
+    """lazy_matrix_mul
     Multiples two matrices using NumPy
 
     Args:
