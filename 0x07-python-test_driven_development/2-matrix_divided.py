@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 
+""" matrix_divided
+Divides all elements of a matrix by given divisor
+Matrix should be a list
+Other types raise TypeError
+"""
+
+
 def matrix_divided(matrix, div):
-    """
+    """ matrix_divided
     Divides all elements of a matrix by a given divisor
 
     Args:
@@ -17,10 +24,10 @@ def matrix_divided(matrix, div):
     or floats, div is not a number or each row is not the same size
     ZeroDivisionError: when div is 0
     """
-    if not isinstance(matrix, list) or
-    any(not isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix
-                        (list of lists) of integers/floats")
+    if not isinstance(matrix, list) or any(not
+       isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must be a matrix (list of lists) " +
+                        "of integers/floats")
     row_sizes = [len(row) for row in matrix]
     if len(set(row_sizes)) != 1:
         raise TypeError("Each row of the matrix must have the same size")
