@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 
+""" print_square
+Prints a square with #
+Has one argument size 
+"""
+
 def print_square(size):
     """Print a square with #
     Args:
     size - integer size of square
     """
+    if size is None:
+        raise TypeError("missing argument")
     if type(size) is not int:
         raise TypeError("size must be an integer")
     elif size < 0:
