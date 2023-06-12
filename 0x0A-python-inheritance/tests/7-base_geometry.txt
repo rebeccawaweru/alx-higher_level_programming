@@ -1,0 +1,31 @@
+#7-geometry
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+#Test Case 1
+>>> result = BaseGeometry()
+>>> result.integer_validator("name", None)
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+#Test Case 2
+>>> result = BaseGeometry()
+>>> result.integer_validator("name", "blue")
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+#Test Case 3
+>>> result = BaseGeometry()
+>>> result.integer_validator("name", -1)
+Traceback (most recent call last):
+	...
+ValueError: name must be greater than 0
+
+#Test Case 4
+>>> result = BaseGeometry()
+>>> result.()
+Traceback (most recent call last):
+	...
+Execption: area() is not implemeted
