@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Define function to create Object from JSON file"""
+import json
 
 
 def load_from_json_file(filename):
