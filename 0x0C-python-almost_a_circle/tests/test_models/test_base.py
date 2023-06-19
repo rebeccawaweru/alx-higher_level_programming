@@ -118,5 +118,6 @@ class TestBaseClass(unittest.TestCase):
         Rectangle.save_to_file(rect_input)
         output = Rectangle.load_from_file()
 
+
 if __name__ == '__main__':
     unittest.main()
