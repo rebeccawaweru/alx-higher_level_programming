@@ -8,6 +8,7 @@ from models.square import Square
 
 
 class TestBaseClass(unittest.TestCase):
+    """Unittest for testing class Base"""
 
     def test_class_member(self):
         """Base class unittest"""
@@ -119,5 +120,5 @@ class TestBaseClass(unittest.TestCase):
         output = Rectangle.load_from_file()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
