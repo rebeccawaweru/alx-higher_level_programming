@@ -4,7 +4,7 @@ import MySQLdb
 from sys import argv
 
 
-def list_states(username, password, name):
+def list_states():
     try:
         """Connect to the MySQL server"""
         connection = MySQLdb.connect(
@@ -30,12 +30,12 @@ def list_states(username, password, name):
             print(row)
 
         """Close the cursor and connection"""
-        cursor.close()udihirehohgjjkninioj
+        cursor.close()
         connection.close
 
-    except MySQLdb.Error as e:
-        print("MySQL Error:" e)
+    except MySQLdb.Error:
+        print("MySQLdb Error")
 
 
 if __name__ == "__main__":
-    list_states(username, password, name)
+    list_states()
