@@ -14,4 +14,4 @@ def find_peak(list_of_integers):
         return lst[x]
     if x != y - 1 and lst[x + 1] > lst[x]:
         return find_peak(lst[x + 1:])
-    return find_peak(li[:m])
+    return find_peak(lst[:m])
