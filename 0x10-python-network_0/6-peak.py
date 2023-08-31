@@ -9,9 +9,9 @@ def find_peak(list_of_integers):
     if y == 0:
         return
     x = y // 2
-    if (x == y - 1 or lst[x] >= lst[x + 1]) and
-    (x == 0 or lst[x] >= lst[x - 1]):
+    if (x == y - 1 or lst[x] >=
+            lst[x + 1]) and (x == 0 or lst[x] >= lst[x - 1]):
         return lst[x]
     if x != y - 1 and lst[x + 1] > lst[x]:
         return find_peak(lst[x + 1:])
-    return find_peak(lst[:m])
+    return find_peak(lst[:x])
