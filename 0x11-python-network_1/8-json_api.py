@@ -7,10 +7,10 @@ if __name__ == "__main__":
     import requests
     from sys import argv
     if len(argv) == 2:
-        y = argv[1]
+        q = argv[1]
     else:
-        y = ""
-    req = requests.post("http://0.0.0.0:5000/search_user", data={'y': y})
+        q = ""
+    req = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     try:
         req_dict = req.json()
         id = req_dict.get('id')
