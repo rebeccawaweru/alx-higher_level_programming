@@ -3,7 +3,7 @@ const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (!error) {
     const list = JSON.parse(body);
-    let completed = {};
+    const completed = {};
     list.forEach((item) => {
       if (item.completed && completed[item.userId] === undefined) {
         completed[item.userId] = 1;
